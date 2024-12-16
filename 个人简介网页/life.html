@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding of the document to UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Ensure the page can scale properly on different devices, with an initial scale of 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the web page -->
+    <title>My Life - LinfengXie</title>
+    <!-- Link to the main style sheet that defines the overall look and layout of the page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link to the life page specific style sheet -->
+    <link rel="stylesheet" href="css/life.css">
+    <!-- Link to the responsive style sheet for adapting the page layout on various screen sizes -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <!-- This is a link to the index page, and "XLF" might be the logo or brand identifier of the website -->
+                <a href="index.html">XLF</a>
+            </div>
+            <div class="nav-links">
+                <!-- Link to go back to the home page of the website -->
+                <a href="index.html">Back to Home Page</a>
+            </div>
+            <div class="theme-toggle">
+                <!-- A button for toggling the theme of the page, for example, switching between light and dark mode. The symbol "🌓" indicates the toggling function -->
+                <button id="themeToggle">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="life-page">
+        <section class="life-hero">
+            <div class="container">
+                <h1 class="section-title fade-in">Records of My Life</h1>
+                <!-- The title of this section, which is likely to be animated with a fade-in effect (presumably defined in CSS or JavaScript). It indicates that this part is about recording aspects of the author's life -->
+                <p class="subtitle slide-up">Record every wonderful moment in life.</p>
+                <!-- A subtitle for this section, probably animated with a slide-up effect. It describes the purpose of this section as recording all the great moments in life -->
+                <div class="hero-decoration">
+                    <div class="circle"></div>
+                    <div class="line"></div>
+                    <!-- These are likely decorative elements within the hero section, perhaps used for visual design purposes like creating a certain style or layout. Their specific appearance and functionality would be defined in the CSS file -->
+                </div>
+            </div>
+        </section>
+
+        <section class="life-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="btn-text">All</span>
+                        <span class="btn-icon">🎯</span>
+                        <!-- This is a filter button with the text "All" and an icon that might represent aiming at everything or selecting all categories. The "active" class might indicate that this button is currently selected or has a default active state. The "data-filter" attribute is likely used for JavaScript functionality to filter content based on the specified value -->
+                    </button>
+                    <button class="filter-btn" data-filter="Campus">
+                        <span class="btn-text">Campus</span>
+                        <span class="btn-icon">🏫</span>
+                        <!-- A filter button for the "Campus" category. When clicked, it's probably used to show only content related to campus life. The icon clearly represents a school building, indicating the campus theme -->
+                    </button>
+                    <button class="filter-btn" data-filter="Travel">
+                        <span class="btn-text">Travel</span>
+                        <span class="btn-icon">✈️</span>
+                        <!-- A filter button for the "Travel" category. Clicking it would likely display only items related to traveling. The airplane icon is a common symbol for travel -->
+                    </button>
+                    <button class="filter-btn" data-filter="Hobbies">
+                        <span class="btn-text">Hobbies</span>
+                        <span class="btn-icon">💻</span>
+                        <!-- A filter button for the "Hobbies" category. It would be used to show content related to personal interests or hobbies. The icon might represent something related to hobbies like using a computer for various hobby-related activities -->
+                    </button>
+                    <button class="filter-btn" data-filter="Daily Life">
+                        <span class="btn-text">Daily Life</span>
+                        <span class="btn-icon">🌟</span>
+                        <!-- A filter button for the "Daily Life" category. Clicking it would display content related to everyday life. The star icon could imply that these are the highlights or special moments in daily life -->
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="life-gallery">
+            <div class="container gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="Campus">
+                        <img src="images/life/campus-1.jpg" alt="Campus Life">
+                        <!-- An image element showing a picture related to campus life. The "src" attribute specifies the image file path, and the "alt" attribute provides alternative text for when the image can't be displayed, briefly describing what the image is about -->
+                        <div class="item-overlay">
+                            <h3>Time in the Library</h3>
+                            <p>Beautiful moments of quiet study.</p>
+                            <!-- An overlay on the gallery item that contains a title and a description. This overlay might appear when the user hovers over the item or in some other interactive way, providing more details about the image or video content -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="Campus">
+                        <img src="images/life/campus-2.jpg" alt="Campus Activities">
+                        <div class="item-overlay">
+                            <h3>Dormitory Activities</h3>
+                            <p>Colorful campus life.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="Travel">
+                        <img src="images/life/travel-1.jpg" alt="Travel Photos">
+                        <div class="item-overlay">
+                            <h3>City Exploration</h3>
+                            <p>Explore every corner of the city.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item tall" data-category="Travel">
+                        <img src="images/life/travel-2.jpg" alt="Natural Scenery">
+                        <div class="item-overlay">
+                            <h3>Natural Scenery</h3>
+                            <p>Experience the charm of nature.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="Hobbies">
+                        <video autoplay muted loop playsinline preload="auto" class="gallery-video" webkit-playsinline
+                            x5-playsinline x-webkit-airplay="allow">
+                            <source src="images/life/coding-3.mp4" type="video/mp4">
+                        </video>
+                        <div class="item-overlay">
+                            <h3>Programming Daily</h3>
+                            <p>Fun in coding.</p>
+                        </div>
+                        <!-- A video element for displaying video content related to hobbies (in this case, programming). The "autoplay" attribute makes the video start playing automatically when the page loads (subject to browser settings). "muted" means the video will play without sound. "loop" makes it play repeatedly. The other attributes like "playsinline", "preload", "webkit-playsinline", "x5-playsinline", and "x-webkit-airplay" are related to how the video is played and its compatibility with different browsers and platforms -->
+                    </div>
+                    <div class="gallery-item wide" data-category="Hobbies">
+                        <img src="images/life/hobby-2.jpg" alt="Other Hobbies">
+                        <div class="item-overlay">
+                            <h3>Music Time</h3>
+                            <p>Enjoy the beauty of music.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item tall" data-category="Daily Life">
+                        <img src="images/life/daily-1.jpg" alt="Daily Life">
+                        <div class="item-overlay">
+                            <h3>Sports Record</h3>
+                            <p>Taste the beauty of life.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="Daily Life">
+                        <video autoplay muted loop playsinline preload="auto" class="gallery-video">
+                            <source src="images/life/daily-2.mp4" type="video/mp4">
+                        </video>
+                        <div class="item-overlay">
+                            <h3>Bits of Daily Life</h3>
+                            <p>Record the touching moments in the ordinary.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script src="js/emoji.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/snowfall.js"></script>
+    <script src="js/clickSound.js"></script>
+</body>
+
+</html>

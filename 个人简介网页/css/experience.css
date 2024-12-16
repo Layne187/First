@@ -1,0 +1,266 @@
+/* 基础样式（亮色主题） */
+.experience-page {
+    padding-top: 80px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+.experience-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.experience-card .period {
+    color: #34495e;
+    font-style: italic;
+}
+
+.experience-card .description {
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* 深色模式样式 */
+[data-theme="dark"] {
+    .experience-page {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ccd6f6;
+    }
+
+    .experience-card {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .experience-card h3 {
+        color: #e74c3c;
+        /* 使用主题强调色 */
+    }
+
+    .experience-card .period {
+        color: #8892b0;
+    }
+
+    .experience-card .description {
+        color: #ccd6f6;
+    }
+
+    /* 标题样式 */
+    .section-title {
+        color: #ccd6f6;
+    }
+
+    .subtitle {
+        color: #8892b0;
+    }
+}
+
+/* 经验页面样式 */
+.experience-page {
+    padding-top: 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../images/nchu-gate.jfif') center/cover fixed;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+}
+
+.experience-hero {
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.experience-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* 技能卡片样式 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.skill-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 时间线样式 */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 50%;
+    padding: 0 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline-content h3 {
+    margin: 0 0 1rem;
+    color: var(--secondary-color);
+}
+
+.date {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: rgba(231, 76, 60, 0.2);
+    border-radius: 15px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tags span {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    font-size: 0.875rem;
+}
+
+/* 成就卡片样式 */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.achievement-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.achievement-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 调整雪花在经验页面的样式 */
+.experience-page .snowflake {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* 调整 emoji 在经验��面的样式 */
+.experience-page .emoji-cursor {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}

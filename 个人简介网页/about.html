@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding of the document to UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Ensure the page can scale properly on different devices, with an initial scale of 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the web page -->
+    <title>About Me - LinfengXie</title>
+    <!-- Link to the main style sheet that defines the overall look and layout of the page -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link to the responsive style sheet for adapting the page layout on various screen sizes -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <!-- This is a link to the index page, and "XLF" might be the logo or brand identifier of the website -->
+                <a href="index.html">XLF</a>
+            </div>
+            <div class="nav-links">
+                <!-- Link to go back to the home page of the website -->
+                <a href="index.html">Back to Home Page</a>
+            </div>
+            <div class="theme-toggle">
+                <!-- A button for toggling the theme of the page, for example, switching between light and dark mode. The symbol "🌓" indicates the toggling function -->
+                <button id="themeToggle">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-header">
+                    <div class="profile-container">
+                        <!-- The profile picture. The "src" attribute specifies the path of the image, and the "alt" attribute provides alternative text description when the image cannot be displayed -->
+                        <img src="images/avatar.jpg" alt="Personal ID Photo" class="profile-image">
+                    </div>
+                    <div class="profile-info">
+                        <h1>Xie Linfeng</h1>
+                        <!-- Description related to personal position, identity, etc. -->
+                        <p class="title">Student of Network Engineering</p>
+                        <div class="social-links">
+                            <!-- The following are links to various social platforms or contact channels -->
+                            <!-- GitHub link. Clicking it will redirect to the corresponding GitHub page. "target="_blank"" means opening in a new tab -->
+                            <a href="https://github.com" target="_blank">GitHub</a>
+                            <!-- Email link. Clicking it will invoke the default email client to send an email to the specified email address -->
+                            <a href="https://mail.qq.com/">Email</a>
+                            <!-- LinkedIn link. Clicking it will redirect to the corresponding LinkedIn personal page in a new tab -->
+                            <a href="https://www.xiaohongshu.com/" target="_blank">xiaohongshu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Professional Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Front-end Development</h3>
+                        <!-- List of skills related to front-end development -->
+                        <ul>
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript / TypeScript</li>
+                            <li>Vue.js / React</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Back-end Development</h3>
+                        <!-- List of skills related to back-end development -->
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>Database Design</li>
+                            <li>API Development</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools and Methods</h3>
+                        <!-- List of skills related to commonly used tools and methods in development -->
+                        <ul>
+                            <li>Git</li>
+                            <li>VS Code</li>
+                            <li>Webpack</li>
+                            <li>Agile Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2>Educational Background</h2>
+                <div class="education-card">
+                    <h3>Nanchang Hangkong University</h3>
+                    <!-- Time period from enrollment to graduation -->
+                    <p class="period">2022 - 2026</p>
+                    <!-- Name of the major studied -->
+                    <p class="major">Network Engineering</p>
+                    <p class="description">
+                        <!-- Briefly list and introduce the main courses of the major -->
+                        Main Courses: Computer Network, Data Structure, Operating System, Network Security, Web
+                        Development, etc.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests" class="interests-section">
+            <div class="container">
+                <h2>Hobbies</h2>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <span class="interest-icon">🎮</span>
+                        <h3>Game Development</h3>
+                        <!-- A brief description of this hobby, indicating enthusiasm for learning game development technologies and the engine being explored -->
+                        <p>Keen on learning game development technologies and currently exploring the Unity engine.</p>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-icon">📚</span>
+                        <h3>Technical Writing</h3>
+                        <!-- Explain that this hobby is writing technical blogs to share learning experiences -->
+                        <p>Often write technical blogs to share learning experiences.</p>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-icon">🎨</span>
+                        <h3>UI Design</h3>
+                        <!-- Indicate passion for user interface design -->
+                        <p>Passionate about user interface design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/animations.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/emoji.js"></script>
+    <script src="js/snowfall.js"></script>
+    <script src="js/clickSound.js"></script>
+</body>
+
+</html>

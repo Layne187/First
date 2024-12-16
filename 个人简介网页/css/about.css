@@ -1,0 +1,290 @@
+/* 关于页面特定样式 */
+.about-section {
+    padding: 8rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+        url('../images/nchu-gate.jfif') center/cover fixed;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* 添加背景装饰 */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(66, 133, 244, 0.1) 0%, transparent 70%);
+    transform: rotate(-45deg);
+    z-index: 0;
+}
+
+/* 内容布局 */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    margin-top: 2rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 左侧头像区域 */
+.about-image {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
+    border: 8px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    object-position: top center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 姓名标签样式 */
+.name-tag {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    perspective: 1000px;
+    z-index: 2;
+}
+
+.name-tag .short-name {
+    display: block;
+    transition: transform 0.5s ease;
+    transform-origin: left;
+    background: linear-gradient(45deg, #e74c3c, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 10px;
+}
+
+.name-tag .full-name {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    opacity: 0;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    transition: all 0.5s ease;
+    background: linear-gradient(45deg, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 10px;
+}
+
+/* 右侧文字和技能区域 */
+.about-text {
+    flex: 1;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+/* 技能条布局 */
+.skills {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.skill-bar {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name::after {
+    content: attr(data-level);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), #f1c40f);
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 动画效果 */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* 添加深色模式样式 */
+[data-theme="dark"] {
+
+    /* 个人信息部分 */
+    .about-header {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        /* 保持圆角 */
+        padding: 2rem;
+        /* 保持内边距 */
+    }
+
+    .profile-info h1 {
+        color: #ccd6f6;
+    }
+
+    .profile-info .title {
+        color: #8892b0;
+    }
+
+    /* 社交链接样式 */
+    .social-links a {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e74c3c;
+    }
+
+    .social-links a:hover {
+        background: rgba(231, 76, 60, 0.1);
+        color: #ccd6f6;
+    }
+
+    /* 技能部分 */
+    .skills h2,
+    .education-section h2,
+    .interests-section h2 {
+        color: #ccd6f6;
+    }
+
+    /* 技能卡片样式 */
+    .skill-category {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .skill-category h3 {
+        color: #e74c3c;
+    }
+
+    .skill-category ul li {
+        color: #8892b0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 教育经历卡片样式 */
+    .education-card {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .education-card h3 {
+        color: #e74c3c;
+    }
+
+    .education-card .period,
+    .education-card .major,
+    .education-card .description {
+        color: #8892b0;
+    }
+
+    /* 兴趣爱好卡片样式 */
+    .interest-item {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .interest-item h3 {
+        color: #e74c3c;
+    }
+
+    .interest-item p {
+        color: #8892b0;
+    }
+
+    .interest-icon {
+        opacity: 0.9;
+    }
+
+    .profile-image {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}

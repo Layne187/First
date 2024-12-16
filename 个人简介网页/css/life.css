@@ -1,0 +1,283 @@
+/* 生活页面基础样式（亮色主题） */
+.life-page {
+    padding-top: 80px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+/* 生活页面头部区域 */
+.life-hero {
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/nchu-gate.jfif') center/cover fixed;
+}
+
+.hero-decoration {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-decoration .circle {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.hero-decoration .line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* 图片网格布局 */
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: calc(var(--item-index) * 0.1s);
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.gallery-item.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item:not(.show) {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* 分类过滤器样式 */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    padding: 1rem;
+    background: rgba(44, 62, 80, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn {
+    padding: 1rem 2rem;
+    border: 1px solid rgba(44, 62, 80, 0.2);
+    background: rgba(44, 62, 80, 0.1);
+    color: #2c3e50;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn .btn-icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:hover .btn-icon,
+.filter-btn.active .btn-icon {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.filter-btn.active {
+    background: rgba(231, 76, 60, 0.2);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* 图片和视频样式 */
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.15);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(44, 62, 80, 0.9));
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .category-filters {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        padding: 1rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 深色模式样式 */
+[data-theme="dark"] {
+    .life-page {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ccd6f6;
+    }
+
+    /* 分类过滤器样式 */
+    .category-filters {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-btn {
+        background: rgba(44, 62, 80, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ccd6f6;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+        background: rgba(231, 76, 60, 0.2);
+        border-color: rgba(231, 76, 60, 0.3);
+        color: #fff;
+    }
+
+    /* 标题样式 */
+    .section-title {
+        color: #ccd6f6;
+    }
+
+    .subtitle {
+        color: #8892b0;
+    }
+
+    /* 图片卡片遮罩层 */
+    .item-overlay {
+        background: linear-gradient(transparent, rgba(44, 62, 80, 0.95));
+    }
+
+    .item-overlay h3 {
+        color: #fff;
+    }
+
+    .item-overlay p {
+        color: #ccd6f6;
+    }
+}
+
+/* 标题样式 - 亮色主题 */
+.section-title {
+    color: #2c3e50;
+}
+
+.subtitle {
+    color: #34495e;
+}
+
+/* 图片卡片遮罩层 - 亮色主题 */
+.item-overlay {
+    background: linear-gradient(transparent, rgba(44, 62, 80, 0.9));
+}
+
+.item-overlay h3 {
+    color: #fff;
+}
+
+.item-overlay p {
+    color: rgba(255, 255, 255, 0.9);
+}
